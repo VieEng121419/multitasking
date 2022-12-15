@@ -11,8 +11,6 @@ import {
   Textarea,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Heading,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
@@ -105,11 +103,7 @@ export function Container() {
       </div>
 
       {/* Form Add Address */}
-      <div
-        style={{
-          width: "500px",
-        }}
-      >
+      <div className="address-form">
         <form onSubmit={handleSubmit} className="addTask" name="addTask">
           <FormControl isInvalid={isNameError} isRequired>
             <FormLabel>Tên địa điểm</FormLabel>
@@ -151,16 +145,18 @@ export function Container() {
       </div>
 
       {/* Render List Address */}
-      <Grid
-        templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-        gap={6}
-      >
-        {tasks.map((task) => (
-          <GridItem>
-            <Item key={task.id} task={task} handleRemove={() => handleRemove(task.id)}/>
-          </GridItem>
-        ))}
-      </Grid>
+      <div className="address-cotainer">
+        <Grid
+            templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+            gap={6}
+        >
+            {tasks.map((task) => (
+            <GridItem>
+                <Item key={task.id} task={task} handleRemove={() => handleRemove(task.id)}/>
+            </GridItem>
+            ))}
+        </Grid>       
+      </div>
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.address-form {
+    width: 500px;
+    @media only screen and (max-width: 426px) {
+        width: 396px;
+    }
+    @media only screen and (max-width: 376px) {
+        width: 360px;
+    }
+}
